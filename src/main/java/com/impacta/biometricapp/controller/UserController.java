@@ -40,6 +40,4 @@ public class UserController {
     public ResponseEntity<String> logout(@PathVariable Integer id){
         return new ResponseEntity<>(userService.logout(id), HttpStatus.OK);
     }
-
-
 }

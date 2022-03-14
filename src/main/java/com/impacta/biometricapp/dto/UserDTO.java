@@ -1,7 +1,6 @@
 package com.impacta.biometricapp.dto;
 
 import com.impacta.biometricapp.model.User;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 
 public class UserDTO {
     private Integer id;

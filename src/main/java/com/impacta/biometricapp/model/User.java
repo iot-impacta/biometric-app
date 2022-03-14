@@ -3,10 +3,10 @@ package com.impacta.biometricapp.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "TB_USER")
+@Table(name = "users")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @Column
     private Integer age;

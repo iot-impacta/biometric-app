@@ -50,8 +50,9 @@ public class UserService {
     public String createUser(UserDTO dto) {
         User user = dto.toOrder(dto);
         try{
-            userRepository.save(user);
-            return "User saved";
+            User savedUser = userRepository.save(user);
+            Integer id = savedUser.getId();
+            return id.toString();
         } catch (Exception e){
             e.printStackTrace();
         }
