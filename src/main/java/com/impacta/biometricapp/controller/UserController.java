@@ -31,4 +31,15 @@ public class UserController {
         return new ResponseEntity<>(userService.createUser(dto), HttpStatus.OK);
     }
 
+    @PutMapping("/user/logon/{id}")
+    public ResponseEntity<String> logon(@PathVariable Integer id){
+        return new ResponseEntity<>(userService.logon(id), HttpStatus.OK);
+    }
+
+    @PutMapping("/user/logout/{id}")
+    public ResponseEntity<String> logout(@PathVariable Integer id){
+        return new ResponseEntity<>(userService.logout(id), HttpStatus.OK);
+    }
+
+
 }

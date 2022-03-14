@@ -57,4 +57,31 @@ public class UserService {
         }
         return "Could not be save the user";
     }
+
+    public String logon(Integer id){
+        try{
+            User user = userRepository.findById(id).get();
+            user.setLogged(true);
+            userRepository.save(user);
+
+            return "Sucess - LOGIN";
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return "Failed to login";
+    }
+
+    public String logout(Integer id){
+        try{
+            User user = userRepository.findById(id).get();
+            user.setLogged(false);
+            userRepository.save(user);
+
+            return "Sucess - LOGOUT";
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return "Failed to logout";
+    }
+
 }
