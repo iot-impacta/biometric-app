@@ -85,4 +85,19 @@ public class UserService {
         return "Failed to logout";
     }
 
+    public String log(Integer id) {
+        try {
+            Optional<User> opUser = userRepository.findById(id);
+            if (!opUser.isPresent()) return "failed";
+            User user = opUser.get();
+            Boolean isLogged = user.getLogged();
+            user.setLogged(isLogged == null || !isLogged);
+            userRepository.save(user);
+            return user.getLogged() ? "on" : "off";
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "failed";
+    }
+
 }

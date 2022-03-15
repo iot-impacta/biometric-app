@@ -40,4 +40,9 @@ public class UserController {
     public ResponseEntity<String> logout(@PathVariable Integer id){
         return new ResponseEntity<>(userService.logout(id), HttpStatus.OK);
     }
+
+    @PostMapping("/user/log/{id}")
+    public ResponseEntity<String> log(@PathVariable Integer id) {
+        return new ResponseEntity<>(userService.log(id), HttpStatus.OK);
+    }
 }
